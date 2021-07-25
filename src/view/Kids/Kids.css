@@ -1,0 +1,48 @@
+
+.kids-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.kids-movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.kids-search {
+  position: absolute;
+  background-color: transparent;
+  border: 2px solid #373b69;
+  border-radius: 50px;
+  color: white;
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem;
+  right:0;
+}
+
+.kids-search:focus {
+  outline: 0;
+}
+
+.kids-banner {
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.kids-banner img {
+  object-fit: cover;
+  width: 100%;
+  height: 250px;
+}
+
+.kids-video-list{
+
+}

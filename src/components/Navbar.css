@@ -1,0 +1,26 @@
+header {
+  background-color: #191d42;
+  display: flex;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  
+  justify-content: flex-start;
+
+}
+
+.top-nav-container{
+  display:flex;
+  justify-content: center;
+}
+
+.top-nav-option{
+  background-color:cyan;
+  /*border: 2px solid lightblue;*/
+  padding:10px;
+  width:100px;
+  border-radius:10px 10px 0px 0px;
+}
+
+.current{
+  background-color:blue;
+}

@@ -1,0 +1,33 @@
+" Press ? for help
+
+.. (up a dir)
+</Desktop/node/ytmoviesapp/
+▸ node_modules/
+▸ public/
+▾ src/
+  ▾ components/
+    ▸ SearchBar/
+    ▸ VideoDetail/
+    ▾ VideoItem/
+        VideoItem.css
+        VideoItem.js
+    ▸ VideoList/
+      Navbar.css
+  ▾ view/
+    ▸ Home/
+    ▸ Kids/
+    ▸ Movies/
+    ▾ Playback/
+        Playback.css
+        Playback.js
+    ▸ Tv/
+    App.js
+    App.test.js
+    index.css
+    index.js
+    logo.svg
+    reportWebVitals.js
+    setupTests.js
+  package-lock.json
+  package.json
+  README.md

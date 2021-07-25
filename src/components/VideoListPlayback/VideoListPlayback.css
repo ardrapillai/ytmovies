@@ -1,0 +1,8 @@
+.VideoListPlayback-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: blueviolet;
+
+  justify-content: space-evenly;
+}
