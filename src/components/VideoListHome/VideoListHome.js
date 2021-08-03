@@ -15,17 +15,19 @@ const VideoListHome = ({ videos, onVideoSelect }) => {
 
   var settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+      slidesToShow: 4,
+      slidesToScroll: 2,
+      centerMode: true,
+      centerPadding: '5%',
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1280,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+            slidesToShow: 3,
+            slidesToScroll: 3,
           infinite: true,
           dots: true,
         },
@@ -33,7 +35,7 @@ const VideoListHome = ({ videos, onVideoSelect }) => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
+            slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 2,
         },
@@ -41,7 +43,7 @@ const VideoListHome = ({ videos, onVideoSelect }) => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+            slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
