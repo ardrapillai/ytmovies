@@ -13,14 +13,25 @@ const Slideshow = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1,
+      slidesToScroll: 1,
+      centerMode: true,
+      centerPadding: '5%',
+      autoplay: true,
+      speed: 500,
+      autoplaySpeed: 5000,
+      cssEase: "linear"
+
   };
+
+
 
   return (
       <Slider {...settings}>
           <div className="each-slide">
               <div className="each-slide-img-container">
                   <img src={slideImages[0]} />
+                      <div className="each-slide-shade">
+                      </div>
                       </div>
         </div>
             <div className="each-slide">
