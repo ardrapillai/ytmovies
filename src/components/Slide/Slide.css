@@ -1,3 +1,4 @@
-.slide-container {
-  display: block;
+.each-slide {
+  height:50vh;
+  display: flex;
 }

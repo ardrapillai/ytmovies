@@ -1,11 +1,13 @@
 import React from "react";
 import "./Slide.css";
+
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const slideImages = ["movie1.jfif", "movie2.jfif", "movie3.jfif"];
 
 const Slideshow = () => {
-  console.log("hello");
   const settings = {
     dots: true,
     infinite: true,
@@ -13,29 +15,20 @@ const Slideshow = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+
   return (
-    <div className="slide-container">
       <Slider {...settings}>
-        <div>
-          <h3>1</h3>
+          <div className="each-slide">
+              <img src={slideImages[0]} />
         </div>
-        <div>
-          <h3>2</h3>
+            <div className="each-slide">
+
+              <img src={slideImages[1]} />
         </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
+        <div className="each-slide">
+              <img src={slideImages[2]} />
         </div>
       </Slider>
-    </div>
   );
 };
 

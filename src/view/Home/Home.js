@@ -12,7 +12,6 @@ import "./Home.css";
 
 import Slide from "../../components/Slide/Slide";
 
-import Slick from "../../components/Slick/Slick";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const YOUTUBE_API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
@@ -52,7 +51,9 @@ const App = () => {
         <div className="home-search-bar">
           <SearchBar onSubmit={handleSubmit} />
         </div>
-        <Slick />
+         <div>
+              <Slide />
+         </div>
       </div>
       <div className="home-video-list">
         <VideoListHome videos={videos} onVideoSelect={userSelect} />
