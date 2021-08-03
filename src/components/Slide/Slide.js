@@ -19,14 +19,20 @@ const Slideshow = () => {
   return (
       <Slider {...settings}>
           <div className="each-slide">
-              <img src={slideImages[0]} />
+              <div className="each-slide-img-container">
+                  <img src={slideImages[0]} />
+                      </div>
         </div>
             <div className="each-slide">
 
+              <div className="each-slide-img-container">
               <img src={slideImages[1]} />
+                  </div>
         </div>
         <div className="each-slide">
+              <div className="each-slide-img-container">
               <img src={slideImages[2]} />
+                  </div>
         </div>
       </Slider>
   );
