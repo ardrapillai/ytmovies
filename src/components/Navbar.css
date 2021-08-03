@@ -1,26 +1,32 @@
 header {
   background-color: #191d42;
   display: flex;
-  padding-top: 1rem;
-  padding-left: 1rem;
-  
-  justify-content: flex-start;
+  padding-top: 0.5rem;
+  padding-left: 0.5em;
 
+  justify-content: flex-start;
 }
 
-.top-nav-container{
-  display:flex;
+.top-nav-container {
+  display: flex;
   justify-content: center;
 }
 
-.top-nav-option{
-  background-color:cyan;
+.top-nav-option {
+  background-color: 1f2b5c;
   /*border: 2px solid lightblue;*/
-  padding:10px;
-  width:100px;
-  border-radius:10px 10px 0px 0px;
+  padding: 5px;
+  width: 100px;
+  border-radius: 10px 10px 0px 0px;
+  text-decoration: none;
+  font-size: 22px;
+  color: white;
+  text-align: center;
 }
 
-.current{
-  background-color:blue;
+.current {
+  background-color: #3f335c;
+}
+nav {
+  display: flex;
 }

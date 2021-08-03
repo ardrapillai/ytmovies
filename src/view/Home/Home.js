@@ -2,13 +2,17 @@ import React, { useState, useEffect } from "react";
 
 import SearchBar from "../../components/SearchBar/SearchBar";
 
-import VideoList from "../../components/VideoList/VideoList";
+import VideoListHome from "../../components/VideoListHome/VideoListHome";
 
 import VideoDetail from "../../components/VideoDetail/VideoDetail";
 
 import { useHistory } from "react-router-dom";
 
 import "./Home.css";
+
+import Slide from "../../components/Slide/Slide";
+
+import Slick from "../../components/Slick/Slick";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const YOUTUBE_API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
@@ -48,13 +52,10 @@ const App = () => {
         <div className="home-search-bar">
           <SearchBar onSubmit={handleSubmit} />
         </div>
-        <img
-          src="https://images.unsplash.com/photo-1585951237318-9ea5e175b891?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bW92aWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
-          alt="img"
-        />
+        <Slick />
       </div>
       <div className="home-video-list">
-        <VideoList videos={videos} onVideoSelect={userSelect} />
+        <VideoListHome videos={videos} onVideoSelect={userSelect} />
       </div>
     </div>
   );
