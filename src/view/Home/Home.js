@@ -51,10 +51,14 @@ const App = () => {
         <div className="home-search-bar">
           <SearchBar onSubmit={handleSubmit} />
         </div>
-         <div>
               <Slide />
-         </div>
       </div>
+      <div className="home-divider">popular</div>
+      <div className="home-video-list">
+        <VideoListHome videos={videos} onVideoSelect={userSelect} />
+            </div>
+
+      <div className="home-divider">recomented</div>
       <div className="home-video-list">
         <VideoListHome videos={videos} onVideoSelect={userSelect} />
       </div>

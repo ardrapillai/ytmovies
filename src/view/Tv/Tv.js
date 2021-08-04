@@ -8,6 +8,7 @@ import  VideoDetail  from "../../components/VideoDetail/VideoDetail"
 
 import { useHistory } from "react-router-dom";
 
+import Slide from "../../components/Slide/Slide";
 import "./Tv.css";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -49,11 +50,7 @@ const Tv = () => {
             <div className="Tv-search-bar">
                    <SearchBar onSubmit={handleSubmit} />
         </div>
-	    <img
-            src="https://images.unsplash.com/photo-1585951237318-9ea5e175b891?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bW92aWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
-            alt="img"
-          />
- 
+              <Slide />
             </div>
              <div className="Tv-video-list">
                 <VideoList videos={videos} onVideoSelect={userSelect} />

@@ -10,6 +10,7 @@ import { useHistory } from "react-router-dom";
 
 import "./Kids.css"
 
+import Slide from "../../components/Slide/Slide";
 const API_KEY = process.env.REACT_APP_API_KEY;
 const YOUTUBE_API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 const baseURL='https://www.googleapis.com/youtube/v3/';
@@ -46,13 +47,10 @@ const App = () => {
     return (
         <div className="kids-container">
          <div className="kids-banner">
+              <Slide />
             <div className="kids-search-bar">
                    <SearchBar onSubmit={handleSubmit} />
         </div>
-	    <img
-            src="https://images.unsplash.com/photo-1585951237318-9ea5e175b891?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bW92aWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
-            alt="img"
-          />
  
             </div>
              <div className="kids-video-list">
