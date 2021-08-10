@@ -2,10 +2,13 @@
   align-items: center; 
   cursor: pointer;
   display: inline-table;
+  border-radius:20px;
+  overflow:hidden;
   width:1%;
 }
 .video-item-title{
 word-wrap:break-word;
-
+padding:10px;
+  /*background-color:blue;*/
 }
 
