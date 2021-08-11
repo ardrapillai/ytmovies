@@ -25,10 +25,28 @@ const SEARCH_API_RECOMENTED =
   "videos?chart=mostPopular&key=" +
   YOUTUBE_API_KEY +
   "&part=snippet&maxResults=5&regionCode=IN";
+const SEARCH_API_MUSIC =
+  baseURL +
+  "videos?chart=mostPopular&key=" +
+  YOUTUBE_API_KEY +
+  "&part=snippet&maxResults=5&regionCode=IN";
+const SEARCH_API_SPORTS =
+  baseURL +
+  "videos?chart=mostPopular&key=" +
+  YOUTUBE_API_KEY +
+  "&part=snippet&maxResults=5&regionCode=IN";
+const SEARCH_API_NEWS =
+  baseURL +
+  "videos?chart=mostPopular&key=" +
+  YOUTUBE_API_KEY +
+  "&part=snippet&maxResults=5&regionCode=IN";
 
 const App = () => {
   const [popular, setPopular] = useState([]);
   const [recomented, setRecomented] = useState([]);
+  const [music, setMusic] = useState([]);
+  const [sports, setSports] = useState([]);
+  const [news, setNews] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState({ id: {}, snippet: {} });
 
   let history = useHistory();
@@ -36,6 +54,9 @@ const App = () => {
   useEffect(async () => {
     getMovies(SEARCH_API_POPULAR);
     getRecomented(SEARCH_API_RECOMENTED);
+    getMusic(SEARCH_API_MUSIC);
+    getSports(SEARCH_API_SPORTS);
+    getNews(SEARCH_API_NEWS);
   }, []);
 
   //"search?part=snippet&maxResults=5&key="+API_KEY+"&q="+searchTerm
@@ -66,6 +87,45 @@ const App = () => {
         setSelectedVideo(recomented[0]);
       });
   };
+  const getMusic = (API) => {
+    let dataBack;
+
+    fetch(API)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+
+        const { items: music } = data;
+        setMusic(music);
+        setSelectedVideo(music[0]);
+      });
+  };
+  const getSports = (API) => {
+    let dataBack;
+
+    fetch(API)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+
+        const { items: sports } = data;
+        setSports(sports);
+        setSelectedVideo(sports[0]);
+      });
+  };
+  const getNews = (API) => {
+    let dataBack;
+
+    fetch(API)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+
+        const { items: news } = data;
+        setNews(news);
+        setSelectedVideo(news[0]);
+      });
+  };
 
   return (
     <div className="home-container">
@@ -83,6 +143,21 @@ const App = () => {
       <div className="home-divider">recomented</div>
       <div className="home-video-list">
         <VideoListHome videos={recomented} onVideoSelect={userSelect} />
+      </div>
+
+      <div className="home-divider">music</div>
+      <div className="home-video-list">
+        <VideoListHome videos={music} onVideoSelect={userSelect} />
+      </div>
+
+      <div className="home-divider">sports</div>
+      <div className="home-video-list">
+        <VideoListHome videos={sports} onVideoSelect={userSelect} />
+      </div>
+
+      <div className="home-divider">news</div>
+      <div className="home-video-list">
+        <VideoListHome videos={news} onVideoSelect={userSelect} />
       </div>
     </div>
   );
