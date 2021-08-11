@@ -53,11 +53,7 @@ const VideoListHome = ({ videos, onVideoSelect }) => {
   };
 
   const listOfVideos = videos.map((video) => (
-    <VideoItem
-      onVideoSelect={onVideoSelect}
-      key={video.id.videoId}
-      video={video}
-    />
+    <VideoItem onVideoSelect={onVideoSelect} key={video.id} video={video} />
   ));
 
   return (

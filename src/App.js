@@ -13,6 +13,7 @@ import Movies from "./view/Movies/Movies.js";
 import Tv from "./view/Tv/Tv.js";
 import Playback from "./view/Playback/Playback.js";
 import Login from "./view/Login/Login.js";
+import Signup from "./view/Signup/Signup.js";
 import "./components/Navbar.css";
 import logo from "./logo.svg";
 
@@ -73,6 +74,9 @@ function App() {
           <Route path="/Playback/:vid" component={Playback} />
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/signup">
+            <Signup />
           </Route>
           <Route path="/">
             <Home />

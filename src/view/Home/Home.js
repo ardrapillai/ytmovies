@@ -32,9 +32,9 @@ const SEARCH_API_MUSIC =
   "&part=snippet&maxResults=5&regionCode=IN";
 const SEARCH_API_SPORTS =
   baseURL +
-  "videos?chart=mostPopular&key=" +
+  "search?part=snippet&maxResults=5&key=" +
   YOUTUBE_API_KEY +
-  "&part=snippet&maxResults=5&regionCode=IN";
+  "&q=kids";
 const SEARCH_API_NEWS =
   baseURL +
   "videos?chart=mostPopular&key=" +
@@ -169,6 +169,7 @@ const App = () => {
     history.push("/Playback/" + searchTerm);
   }
   function userSelect(video) {
+    console.log("video user select" + video);
     //setSelectedVideo(video);
     history.push("/Playback/" + video.id.videoId);
   }
