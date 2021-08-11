@@ -1,9 +1,9 @@
 header {
-  background-color: #191d42;
+  background-color: #040624;
   display: flex;
   padding-top: 0.5rem;
   padding-left: 0.5em;
-
+  /*position:relative;*/
   justify-content: flex-start;
 }
 

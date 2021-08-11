@@ -12,22 +12,30 @@ import "./Home.css";
 
 import Slide from "../../components/Slide/Slide";
 
-import Slick from "../../components/Slick/Slick";
-
 const API_KEY = process.env.REACT_APP_API_KEY;
 const YOUTUBE_API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 const baseURL = "https://www.googleapis.com/youtube/v3/";
-const SEARCH_API =
-  baseURL + "search?part=snippet&maxResults=5&key=" + YOUTUBE_API_KEY + "&q=";
+const SEARCH_API_POPULAR =
+  baseURL +
+  "videos?chart=mostPopular&key=" +
+  YOUTUBE_API_KEY +
+  "&part=snippet&maxResults=5";
+const SEARCH_API_RECOMENTED =
+  baseURL +
+  "videos?chart=mostPopular&key=" +
+  YOUTUBE_API_KEY +
+  "&part=snippet&maxResults=5&regionCode=IN";
 
 const App = () => {
-  const [videos, setVideos] = useState([]);
+  const [popular, setPopular] = useState([]);
+  const [recomented, setRecomented] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState({ id: {}, snippet: {} });
 
   let history = useHistory();
 
   useEffect(async () => {
-    getMovies(SEARCH_API + "kids");
+    getMovies(SEARCH_API_POPULAR);
+    getRecomented(SEARCH_API_RECOMENTED);
   }, []);
 
   //"search?part=snippet&maxResults=5&key="+API_KEY+"&q="+searchTerm
@@ -40,9 +48,22 @@ const App = () => {
       .then((data) => {
         console.log(data);
 
-        const { items: videos } = data;
-        setVideos(videos);
-        setSelectedVideo(videos[0]);
+        const { items: popular } = data;
+        setPopular(popular);
+        setSelectedVideo(popular[0]);
+      });
+  };
+  const getRecomented = (API) => {
+    let dataBack;
+
+    fetch(API)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+
+        const { items: recomented } = data;
+        setRecomented(recomented);
+        setSelectedVideo(recomented[0]);
       });
   };
 
@@ -52,10 +73,16 @@ const App = () => {
         <div className="home-search-bar">
           <SearchBar onSubmit={handleSubmit} />
         </div>
-        <Slick />
+        <Slide />
       </div>
+      <div className="home-divider">popular</div>
       <div className="home-video-list">
-        <VideoListHome videos={videos} onVideoSelect={userSelect} />
+        <VideoListHome videos={popular} onVideoSelect={userSelect} />
+      </div>
+
+      <div className="home-divider">recomented</div>
+      <div className="home-video-list">
+        <VideoListHome videos={recomented} onVideoSelect={userSelect} />
       </div>
     </div>
   );

@@ -27,18 +27,39 @@
 
 .home-banner {
   width: 100vw;
-  height: 30vh;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
+  height: 50vh;
 }
 
 .home-banner img {
-  object-fit: cover;
+/* object-fit: cover;*/
   width: 100%;
-  height: 250px;
+  height: 45vh;
+
 }
 
 .home-video-list {
+   padding-top:2rem;
+}
+
+.home-divider {
+  display: flex;
+  align-items: center;
+  color:#333333;
+  --text-divider-gap: 1rem; 
+}
+
+.home-divider::before,
+.home-divider::after {
+  content: '';
+  height: 1px;
+  background-color: #222222;
+  flex-grow: 20;
+  margin-left: var(--text-divider-gap);
+  margin-right: var(--text-divider-gap);
+}
+
+
+.home-divider::before{
+flex-grow: 1;
+
 }

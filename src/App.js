@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,9 +12,9 @@ import Kids from "./view/Kids/Kids.js";
 import Movies from "./view/Movies/Movies.js";
 import Tv from "./view/Tv/Tv.js";
 import Playback from "./view/Playback/Playback.js";
+import Login from "./view/Login/Login.js";
 import "./components/Navbar.css";
 import logo from "./logo.svg";
-import Slick from "./components/Slick/Slick";
 
 function App() {
   return (
@@ -69,10 +70,10 @@ function App() {
           <Route path="/kids">
             <Kids />
           </Route>
-          <Route path="/slick">
-            <Slick />
-          </Route>
           <Route path="/Playback/:vid" component={Playback} />
+          <Route path="/login">
+            <Login />
+          </Route>
           <Route path="/">
             <Home />
           </Route>
