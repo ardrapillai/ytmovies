@@ -18,7 +18,7 @@
   font-family: inherit;
   font-size: 1.2rem;
   padding: 0.5rem 1.5rem;
-  right:0;
+  right: 0;
 }
 
 .kids-search:focus {
@@ -27,15 +27,14 @@
 
 .kids-banner {
   width: 100vw;
-  height: 50vh;
+  height: 60vh;
 }
 
 .kids-banner img {
-/*  object-fit: cover;*/
+  /*  object-fit: cover;*/
   width: 100%;
-  height: 45vh;
+  height: 55vh;
 }
 
-.kids-video-list{
-
+.kids-video-list {
 }

@@ -27,20 +27,19 @@ const SEARCH_API_RECOMENTED =
   "&part=snippet&maxResults=5&regionCode=IN";
 const SEARCH_API_MUSIC =
   baseURL +
-  "videos?chart=mostPopular&key=" +
+  "search?part=snippet&maxResults=5&key=" +
   YOUTUBE_API_KEY +
-  "&part=snippet&maxResults=5&regionCode=IN";
+  "&q=hollywoodvideosongs";
 const SEARCH_API_SPORTS =
   baseURL +
   "search?part=snippet&maxResults=5&key=" +
   YOUTUBE_API_KEY +
-  "&q=kids";
+  "&q=sports";
 const SEARCH_API_NEWS =
   baseURL +
-  "videos?chart=mostPopular&key=" +
+  "search?part=snippet&maxResults=5&key=" +
   YOUTUBE_API_KEY +
-  "&part=snippet&maxResults=5&regionCode=IN";
-
+  "&q=latestnewsenglish";
 const App = () => {
   const [popular, setPopular] = useState([]);
   const [recomented, setRecomented] = useState([]);
@@ -135,27 +134,27 @@ const App = () => {
         </div>
         <Slide />
       </div>
-      <div className="home-divider">popular</div>
+      <div className="home-divider">Popular</div>
       <div className="home-video-list">
         <VideoListHome videos={popular} onVideoSelect={userSelect} />
       </div>
 
-      <div className="home-divider">recomented</div>
+      <div className="home-divider">Recomented</div>
       <div className="home-video-list">
         <VideoListHome videos={recomented} onVideoSelect={userSelect} />
       </div>
 
-      <div className="home-divider">music</div>
+      <div className="home-divider">Music</div>
       <div className="home-video-list">
         <VideoListHome videos={music} onVideoSelect={userSelect} />
       </div>
 
-      <div className="home-divider">sports</div>
+      <div className="home-divider">Sports</div>
       <div className="home-video-list">
         <VideoListHome videos={sports} onVideoSelect={userSelect} />
       </div>
 
-      <div className="home-divider">news</div>
+      <div className="home-divider">News</div>
       <div className="home-video-list">
         <VideoListHome videos={news} onVideoSelect={userSelect} />
       </div>
@@ -169,9 +168,14 @@ const App = () => {
     history.push("/Playback/" + searchTerm);
   }
   function userSelect(video) {
-    console.log("video user select" + video);
+    console.log("video user select" + video.id.videoId);
+    console.log("video user select" + video.id);
+    console.log("video user select" + video.id || video.id.videoId);
     //setSelectedVideo(video);
-    history.push("/Playback/" + video.id.videoId);
+    history.push(
+      "/Playback/" +
+        (typeof video.id.videoId == "undefined" ? video.id : video.id.videoId)
+    );
   }
 };
 

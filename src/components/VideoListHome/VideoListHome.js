@@ -21,7 +21,7 @@ const VideoListHome = ({ videos, onVideoSelect }) => {
     slidesToScroll: 2,
     centerMode: true,
     centerPadding: "10%",
-    initialSlide: 2,
+    initialSlide: 0,
     responsive: [
       {
         breakpoint: 1280,
@@ -53,7 +53,11 @@ const VideoListHome = ({ videos, onVideoSelect }) => {
   };
 
   const listOfVideos = videos.map((video) => (
-    <VideoItem onVideoSelect={onVideoSelect} key={video.id} video={video} />
+    <VideoItem
+      onVideoSelect={onVideoSelect}
+      key={typeof video.id.videoId == "undefined" ? video.id : video.id.videoId}
+      video={video}
+    />
   ));
 
   return (

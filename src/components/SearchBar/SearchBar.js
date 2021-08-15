@@ -15,7 +15,7 @@ const SearchBar = ({ onSubmit }) => {
     <input
       className="search-bar"
       fullWidth
-      label="Search..."
+      placeholder="search..."
       value={searchTerm}
       onChange={handleChange}
       onKeyPress={onKeyPress}

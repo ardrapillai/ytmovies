@@ -1,0 +1,58 @@
+.landingPage-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: blue;
+  background-repeat: no-repeat;
+  background-size: 75% 100%;
+  background-position: right;
+  position: relative;
+  overflow: hidden;
+}
+.landingPage-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  /*background: -webkit-linear-gradient(to right, #ff4b1f, #ff9068);  Chrome 10-25, Safari 5.landingPage-1-6 */
+  background: linear-gradient(
+    to right,
+    #000000ff 40%,
+    #00000000
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.landingPage-content {
+  font-family: sans-serif;
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  color: white;
+}
+
+.landingPage-loginButton {
+  padding: 1rem;
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.landingPage-singup {
+  position: fixed;
+  background-color: #040624;
+  color: white;
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem;
+  right: 0;
+  top: 0;
+  margin: 10px;
+  z-index: 100;
+}
+
+.landingPage-singup:hover {
+  outline: 0;
+}

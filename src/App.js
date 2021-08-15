@@ -16,7 +16,7 @@ import Login from "./view/Login/Login.js";
 import Signup from "./view/Signup/Signup.js";
 import "./components/Navbar.css";
 import logo from "./logo.svg";
-
+import LP from "./view/LandingPage/LandingPage";
 function App() {
   return (
     <div className="App">
@@ -24,7 +24,7 @@ function App() {
         <header>
           <div>
             <nav>
-              <Link to="/wel">
+              <Link to="/">
                 <img src={logo} width="50px" height="50px" />
               </Link>
               <div className="top-nav-container">
@@ -32,7 +32,7 @@ function App() {
                   className="top-nav-option"
                   activeClassName="current"
                   exact
-                  to="/"
+                  to="/home"
                 >
                   Home
                 </NavLink>
@@ -61,6 +61,7 @@ function App() {
             </nav>
           </div>
         </header>
+        <div className="blank"></div>
         <Switch>
           <Route path="/movies">
             <Movies />
@@ -78,8 +79,11 @@ function App() {
           <Route path="/signup">
             <Signup />
           </Route>
-          <Route path="/">
+          <Route path="/home">
             <Home />
+          </Route>
+          <Route path="/">
+            <LP />
           </Route>
         </Switch>
       </Router>

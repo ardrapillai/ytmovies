@@ -5,7 +5,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const slideImages = ["big2.jpg", "movie2.jfif", "movie3.jfif"];
+const slideImages = [
+  "image/kong.jpg",
+  "image/sher.jpeg",
+  "image/war.jpg",
+  "image/army.jpg",
+  "movie3.jfif",
+];
 
 const Slideshow = () => {
   const settings = {
